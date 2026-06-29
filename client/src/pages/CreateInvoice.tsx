@@ -480,6 +480,63 @@ export default function CreateInvoice({ params }: { params?: { id?: string } }) 
           </div>
         </div>
 
+        {/* ── PAGE 2: Terms & Conditions + Privacy Policy (single page, two columns) ── */}
+        <div id="legal-page" style={{
+          maxWidth: "1180px",
+          margin: "24px auto 0 auto",
+          background: "#ffffff",
+          boxShadow: "0 2px 12px rgba(0,0,0,0.09)",
+          fontFamily: "'Inter','Helvetica Neue',Arial,sans-serif",
+          borderRadius: "4px",
+        }}>
+          <div className="legal-pad" style={{ padding: "36px 56px" }}>
+
+            <div style={{ textAlign: "center" as const, marginBottom: "18px" }}>
+              <div style={{ fontSize: "1.2rem", fontWeight: 800, color: "#0f172a", letterSpacing: "0.04em" }}>TERMS &amp; CONDITIONS AND PRIVACY POLICY</div>
+              <div style={{ fontSize: "0.68rem", color: "#94a3b8", marginTop: "4px" }}>Curve Tech Solution (Pvt) Ltd &middot; Last Updated: February 2025</div>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
+
+              {/* Terms & Conditions */}
+              <div>
+                <div style={{ fontSize: "0.74rem", fontWeight: 700, color: "#0f172a", textTransform: "uppercase" as const, letterSpacing: "0.08em", marginBottom: "8px", borderBottom: "1.5px solid #e2e8f0", paddingBottom: "4px" }}>Terms &amp; Conditions</div>
+                <ol style={{ fontSize: "0.66rem", color: "#475569", lineHeight: 1.5, paddingLeft: "16px", margin: 0 }}>
+                  <li style={{ marginBottom: "6px" }}><b>Acceptance of Terms:</b> By using CurveTech Solution (Pvt) Ltd's services, you agree to these Terms. If you do not agree, please do not use our services.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Services:</b> We provide AI-powered digital marketing services (social media marketing, website development, chatbot solutions, video creation, calling agents), subject to availability and change.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Payment Terms:</b> Payments are due in advance unless agreed otherwise, in PKR, subject to change. Monthly fees are due at the start of each cycle. Non-payment may lead to suspension/termination. Third-party costs (ad spend, APIs, hosting) are billed separately.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Client Responsibilities:</b> Provide accurate information, ensure content complies with the law, keep access credentials confidential, respond promptly, and pay invoices on time.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Prohibited Uses:</b> No unlawful, fraudulent, or harmful use; no misinformation, hate speech, or offensive content; no IP infringement; no spamming; nothing that harms our reputation or systems.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Intellectual Property:</b> All deliverables remain our property until full payment is received; a usage license is granted upon full payment. We may showcase work in our portfolio unless otherwise agreed.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Limitation of Liability:</b> We are not liable for indirect, incidental, or consequential damages. Total liability is capped at the amount paid for the specific service in question.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Termination:</b> Either party may terminate with 30 days' written notice. We may terminate immediately for breach, non-payment, or unlawful conduct. No refunds for services already rendered.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Governing Law:</b> These Terms are governed by the laws of Pakistan, with disputes subject to the exclusive jurisdiction of Pakistani courts.</li>
+                  <li style={{ marginBottom: "0" }}><b>Contact:</b> info@curvetechsolution.online &middot; WhatsApp +92 331 6310490</li>
+                </ol>
+              </div>
+
+              {/* Privacy Policy */}
+              <div>
+                <div style={{ fontSize: "0.74rem", fontWeight: 700, color: "#0f172a", textTransform: "uppercase" as const, letterSpacing: "0.08em", marginBottom: "8px", borderBottom: "1.5px solid #e2e8f0", paddingBottom: "4px" }}>Privacy Policy</div>
+                <ol style={{ fontSize: "0.66rem", color: "#475569", lineHeight: 1.5, paddingLeft: "16px", margin: 0 }}>
+                  <li style={{ marginBottom: "6px" }}><b>Introduction:</b> CurveTech Solution (Pvt) Ltd is committed to protecting your privacy and explains here how we collect, use, disclose, and safeguard your information.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Information We Collect:</b> Personal information (name, contact details, business and payment information, communication history) and technical information (IP address, browser, device, usage data).</li>
+                  <li style={{ marginBottom: "6px" }}><b>How We Use Information:</b> To provide and maintain services, process payments, communicate with you, improve your experience, comply with legal obligations, and protect against fraud.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Data Sharing:</b> We do not sell your personal information. We may share it with service providers (payment processors, hosting), third-party platforms (Meta, Google, etc.), or legal authorities when required.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Data Security:</b> We use reasonable technical and organizational measures to protect your data, though no method of internet transmission is 100% secure.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Data Retention:</b> Information is retained as long as necessary for our stated purposes and legal obligations; account information is typically kept for 7 years after our relationship ends.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Your Rights:</b> You may access, correct, or request deletion of your data (subject to legal requirements), object to processing, and withdraw consent where applicable.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Cookies:</b> Our website uses cookies to enhance experience and analyze usage; you can manage preferences via your browser settings.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Third-Party Links:</b> We are not responsible for the privacy practices of external sites linked from our website.</li>
+                  <li style={{ marginBottom: "6px" }}><b>Changes to This Policy:</b> We may update this policy and will post changes on our website; continued use of our services means you accept the updated policy.</li>
+                  <li style={{ marginBottom: "0" }}><b>Contact:</b> info@curvetechsolution.online &middot; WhatsApp +92 331 6310490</li>
+                </ol>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
         <style dangerouslySetInnerHTML={{ __html: `
           @media print {
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
@@ -503,6 +560,12 @@ export default function CreateInvoice({ params }: { params?: { id?: string } }) 
 
             /* Shrink logo a touch */
             #invoice-paper img { width: 54px !important; height: 54px !important; }
+
+            /* Page 2: Terms & Conditions + Privacy Policy — always its own page, never split */
+            #legal-page { page-break-before: always !important; break-before: page !important; page-break-inside: avoid !important; break-inside: avoid !important; max-width: 100% !important; width: 100% !important; margin: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+            #legal-page .legal-pad { padding: 10px 22px !important; }
+            #legal-page ol { page-break-inside: avoid !important; break-inside: avoid !important; }
+            #legal-page li { page-break-inside: avoid !important; break-inside: avoid !important; }
           }
         ` }} />
       </div>
