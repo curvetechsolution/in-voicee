@@ -510,8 +510,7 @@ export default function CreateInvoice({ params }: { params?: { id?: string } }) 
                   <li style={{ marginBottom: "6px" }}><b>Intellectual Property:</b> All deliverables remain our property until full payment is received; a usage license is granted upon full payment. We may showcase work in our portfolio unless otherwise agreed.</li>
                   <li style={{ marginBottom: "6px" }}><b>Limitation of Liability:</b> We are not liable for indirect, incidental, or consequential damages. Total liability is capped at the amount paid for the specific service in question.</li>
                   <li style={{ marginBottom: "6px" }}><b>Termination:</b> Either party may terminate with 30 days' written notice. We may terminate immediately for breach, non-payment, or unlawful conduct. No refunds for services already rendered.</li>
-                  <li style={{ marginBottom: "6px" }}><b>Governing Law:</b> These Terms are governed by the laws of Pakistan, with disputes subject to the exclusive jurisdiction of Pakistani courts.</li>
-                  <li style={{ marginBottom: "0" }}><b>Contact:</b> info@curvetechsolution.online &middot; WhatsApp +92 331 6310490</li>
+                  <li style={{ marginBottom: "0" }}><b>Governing Law:</b> These Terms are governed by the laws of Pakistan, with disputes subject to the exclusive jurisdiction of Pakistani courts.</li>
                 </ol>
               </div>
 
@@ -528,11 +527,17 @@ export default function CreateInvoice({ params }: { params?: { id?: string } }) 
                   <li style={{ marginBottom: "6px" }}><b>Your Rights:</b> You may access, correct, or request deletion of your data (subject to legal requirements), object to processing, and withdraw consent where applicable.</li>
                   <li style={{ marginBottom: "6px" }}><b>Cookies:</b> Our website uses cookies to enhance experience and analyze usage; you can manage preferences via your browser settings.</li>
                   <li style={{ marginBottom: "6px" }}><b>Third-Party Links:</b> We are not responsible for the privacy practices of external sites linked from our website.</li>
-                  <li style={{ marginBottom: "6px" }}><b>Changes to This Policy:</b> We may update this policy and will post changes on our website; continued use of our services means you accept the updated policy.</li>
-                  <li style={{ marginBottom: "0" }}><b>Contact:</b> info@curvetechsolution.online &middot; WhatsApp +92 331 6310490</li>
+                  <li style={{ marginBottom: "0" }}><b>Changes to This Policy:</b> We may update this policy and will post changes on our website; continued use of our services means you accept the updated policy.</li>
                 </ol>
               </div>
 
+            </div>
+
+            {/* ── Shared footer: divider line + contact info ── */}
+            <div style={{ borderTop: "1.5px solid #e2e8f0", marginTop: "18px", paddingTop: "10px", textAlign: "center" as const }}>
+              <div style={{ fontSize: "0.68rem", color: "#64748b" }}>
+                Email: info@curvetechsolution.online &nbsp;&middot;&nbsp; WhatsApp: +92 331 6310490
+              </div>
             </div>
           </div>
         </div>
