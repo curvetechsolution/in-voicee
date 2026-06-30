@@ -104,14 +104,16 @@ export default function InvoiceList() {
     setActionLoading(`accept-${req.id}`);
     try {
       // 1. Parse price correctly
-      // Price format examples: "Rs. 23,600/mo · 5 days", "Rs. 28,000", "Rs. 8,600/mo"
+      // Price format examples: "Rs. 23,600/mo · 5 days", "Rs. 28,000", "$101/mo · 5 days", "$101.00"
       const rawPrice = String(req.price || "0");
+      // Detect currency from the price string itself — "$" => USD (international site), else PKR (local site)
+      const detectedCurrency = rawPrice.includes("$") ? "USD" : "PKR";
       // Step 1: take only the part before "·" (delivery info)
       const beforeDot  = rawPrice.split("·")[0];
       // Step 2: take only part before "/" (per month info)
       const beforeSlash = beforeDot.split("/")[0];
-      // Step 3: remove all non-numeric (digits only — PKR prices are whole numbers)
-      const cleanPrice  = beforeSlash.replace(/[^0-9]/g, "");
+      // Step 3: remove everything except digits and decimal point (keep cents for USD, PKR has no decimals anyway)
+      const cleanPrice  = beforeSlash.replace(/[^0-9.]/g, "");
       const priceNum    = parseFloat(cleanPrice) || 0;
 
       // 2. Get next invoice number from localStorage
@@ -132,7 +134,7 @@ export default function InvoiceList() {
       const newInvoice = {
         id:                     nextNumber,
         invoiceNumber:          nextNumber,
-        currency:               "PKR",
+        currency:               detectedCurrency,
         issueDate:              now,
         dueDate:                due,
         clientName:             req.clientName   || "Unknown",
@@ -170,7 +172,7 @@ export default function InvoiceList() {
       apiRequest("POST", "/api/invoices", {
         invoice: {
           invoiceNumber:          nextNumber,
-          currency:               "PKR",
+          currency:               detectedCurrency,
           issueDate:              now,
           dueDate:                due,
           clientName:             newInvoice.clientName,
